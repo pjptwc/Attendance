@@ -14,6 +14,7 @@
 		31F268FC1CA9E924003B8993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F268FA1CA9E924003B8993 /* LaunchScreen.storyboard */; };
 		31F269071CA9E924003B8993 /* AttendenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269061CA9E924003B8993 /* AttendenceTests.swift */; };
 		31F269121CA9E924003B8993 /* AttendenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269111CA9E924003B8993 /* AttendenceUITests.swift */; };
+		31F269201CA9EDB7003B8993 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		31F2690D1CA9E924003B8993 /* AttendenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttendenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F269111CA9E924003B8993 /* AttendenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceUITests.swift; sourceTree = "<group>"; };
 		31F269131CA9E924003B8993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				31F268F11CA9E924003B8993 /* AppDelegate.swift */,
 				31F268F31CA9E924003B8993 /* ViewController.swift */,
+				31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */,
 				31F268F51CA9E924003B8993 /* Main.storyboard */,
 				31F268F81CA9E924003B8993 /* Assets.xcassets */,
 				31F268FA1CA9E924003B8993 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				31F268F41CA9E924003B8993 /* ViewController.swift in Sources */,
 				31F268F21CA9E924003B8993 /* AppDelegate.swift in Sources */,
+				31F269201CA9EDB7003B8993 /* StudentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
