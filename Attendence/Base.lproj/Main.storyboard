@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JUi-I3-kTY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="JUi-I3-kTY">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUi-I3-kTY" id="T6q-1p-fo1">
@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tRj-RP-aRK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tRj-RP-aRK">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRj-RP-aRK" id="sqm-Ne-ccU">
@@ -100,6 +100,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OQF-N2-sgg" id="zQq-IU-ThG"/>
+                                    <outlet property="delegate" destination="OQF-N2-sgg" id="GEO-7d-XAj"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,8 +115,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Students" id="hBL-JK-SXX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1N3-2e-NxG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1N3-2e-NxG">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="OQF-N2-sgg" id="3S5-1T-3BI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Cr1-PU-Mk4" id="c3h-PJ-IYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mei-HK-coO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
