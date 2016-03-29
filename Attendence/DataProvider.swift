@@ -20,18 +20,29 @@ class DataProvider {
 
     static let sharedInstance = DataProvider()
     
+    var datesFilePath: String {
+        return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! + kDatesFilePath
+    }
+    
+    var studentsFilePath: String {
+        return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! + kStudentsFilePath
+    }
+    
     func getStoredDates() -> [Date]? {
-        var returnArray: [Date]?
+        var returnArray: [Date]? = nil
         
-        if let dateData = NSData.init(contentsOfFile: self.filePathForFile(kDatesFilePath)) {
+        if let dateData = NSData.init(contentsOfFile: self.datesFilePath) {
             returnArray = NSKeyedUnarchiver.unarchiveObjectWithData(dateData) as? [Date]
         }
         return returnArray
     }
     
     func getStoredStudents() -> [Student]? {
-        let returnArray: [Student]? = nil
+        var returnArray: [Student]?
         
+        if let studentData = NSData.init(contentsOfFile: self.studentsFilePath) {
+            returnArray = NSKeyedUnarchiver.unarchiveObjectWithData(studentData) as? [Student]
+        }
         return returnArray
     }
     
@@ -43,13 +54,7 @@ class DataProvider {
         } else {
             storedDates?.append(date)
         }
-        
-        let dateData = NSKeyedArchiver.archivedDataWithRootObject(storedDates!)
-        do {
-            try dateData.writeToFile(self.filePathForFile(kDatesFilePath), options: .DataWritingAtomic)
-        } catch let error {
-            print("Something went wrong when storing...\(error)")
-        }
+        NSKeyedArchiver.archiveRootObject(storedDates!, toFile: self.datesFilePath)
     }
     
     func storeStudent(student: Student) {
@@ -60,10 +65,6 @@ class DataProvider {
         } else {
             storedStudents?.append(student)
         }
-    }
-    
-    func filePathForFile(file: String) -> String {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
-        return documentsPath! + file
+        NSKeyedArchiver.archiveRootObject(storedStudents!, toFile: self.studentsFilePath)
     }
 }

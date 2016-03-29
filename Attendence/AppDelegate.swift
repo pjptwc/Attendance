@@ -17,18 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
     
-//        let student1 = Student()
-//        student1.name = "Jon"
+        let student1 = Student()
+        student1.name = "Jon"
         createFilesIfNeeded()
         
         let date1 = Date()
         date1.date = NSDate()
         
         DataProvider.sharedInstance.storeDate(date1)
-//        DataProvider.sharedInstance.storeStudent(student1)
+        DataProvider.sharedInstance.storeStudent(student1)
         
         print(DataProvider.sharedInstance.getStoredDates())
-//        print(DataProvider.sharedInstance.getStoredStudents())
+        print(DataProvider.sharedInstance.getStoredStudents())
         
         return true
     }
@@ -56,11 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func createFilesIfNeeded() {
+        let dataProvider = DataProvider.sharedInstance
         
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
-        let datesFilePath = documentsPath! + kDatesFilePath
-
-        NSFileManager.defaultManager().createFileAtPath(datesFilePath, contents: nil, attributes: nil)
+        let fileManager = NSFileManager.defaultManager()
+        if !fileManager.fileExistsAtPath(dataProvider.datesFilePath) {
+            fileManager.createFileAtPath(dataProvider.datesFilePath, contents: nil, attributes: nil)
+        }
+        
+        if !fileManager.fileExistsAtPath(dataProvider.studentsFilePath) {
+            fileManager.createFileAtPath(dataProvider.studentsFilePath, contents: nil, attributes: nil)
+        }
     }
 
 }
