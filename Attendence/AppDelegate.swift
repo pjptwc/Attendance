@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+    
+//        let student1 = Student()
+//        student1.name = "Jon"
+        createFilesIfNeeded()
+        
+        let date1 = Date()
+        date1.date = NSDate()
+        
+        DataProvider.sharedInstance.storeDate(date1)
+//        DataProvider.sharedInstance.storeStudent(student1)
+        
+        print(DataProvider.sharedInstance.getStoredDates())
+//        print(DataProvider.sharedInstance.getStoredStudents())
+        
         return true
     }
 
@@ -41,6 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func createFilesIfNeeded() {
+        
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
+        let datesFilePath = documentsPath! + kDatesFilePath
+
+        NSFileManager.defaultManager().createFileAtPath(datesFilePath, contents: nil, attributes: nil)
+    }
 
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31478F5E1CAA0A030037D4FC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31478F5D1CAA0A030037D4FC /* DataProvider.swift */; };
 		31F268F21CA9E924003B8993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F268F11CA9E924003B8993 /* AppDelegate.swift */; };
 		31F268F41CA9E924003B8993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F268F31CA9E924003B8993 /* ViewController.swift */; };
 		31F268F71CA9E924003B8993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F268F51CA9E924003B8993 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		31F269071CA9E924003B8993 /* AttendenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269061CA9E924003B8993 /* AttendenceTests.swift */; };
 		31F269121CA9E924003B8993 /* AttendenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269111CA9E924003B8993 /* AttendenceUITests.swift */; };
 		31F269201CA9EDB7003B8993 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */; };
+		31F269231CA9EE3C003B8993 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269221CA9EE3C003B8993 /* Student.swift */; };
+		31F269271CA9EFA4003B8993 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F269261CA9EFA4003B8993 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31478F5D1CAA0A030037D4FC /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		31F268EE1CA9E924003B8993 /* Attendence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F268F11CA9E924003B8993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31F268F31CA9E924003B8993 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		31F269111CA9E924003B8993 /* AttendenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceUITests.swift; sourceTree = "<group>"; };
 		31F269131CA9E924003B8993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		31F269221CA9EE3C003B8993 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		31F269261CA9EFA4003B8993 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		31F268F01CA9E924003B8993 /* Attendence */ = {
 			isa = PBXGroup;
 			children = (
+				31F269211CA9EE22003B8993 /* Models */,
 				31F268F11CA9E924003B8993 /* AppDelegate.swift */,
 				31F268F31CA9E924003B8993 /* ViewController.swift */,
 				31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */,
@@ -126,6 +133,16 @@
 				31F269131CA9E924003B8993 /* Info.plist */,
 			);
 			path = AttendenceUITests;
+			sourceTree = "<group>";
+		};
+		31F269211CA9EE22003B8993 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				31F269221CA9EE3C003B8993 /* Student.swift */,
+				31F269261CA9EFA4003B8993 /* Date.swift */,
+				31478F5D1CAA0A030037D4FC /* DataProvider.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31478F5E1CAA0A030037D4FC /* DataProvider.swift in Sources */,
 				31F268F41CA9E924003B8993 /* ViewController.swift in Sources */,
+				31F269271CA9EFA4003B8993 /* Date.swift in Sources */,
 				31F268F21CA9E924003B8993 /* AppDelegate.swift in Sources */,
 				31F269201CA9EDB7003B8993 /* StudentsViewController.swift in Sources */,
+				31F269231CA9EE3C003B8993 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +508,7 @@
 				31F269181CA9E924003B8993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31F269191CA9E924003B8993 /* Build configuration list for PBXNativeTarget "AttendenceTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +517,7 @@
 				31F2691B1CA9E924003B8993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31F2691C1CA9E924003B8993 /* Build configuration list for PBXNativeTarget "AttendenceUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +526,7 @@
 				31F2691E1CA9E924003B8993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

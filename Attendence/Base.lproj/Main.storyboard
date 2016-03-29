@@ -68,7 +68,7 @@
         <!--Students-->
         <scene sceneID="R3G-xv-KCW">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OQF-N2-sgg" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OQF-N2-sgg" customClass="StudentsViewController" customModule="Attendence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nSs-cH-sce"/>
                         <viewControllerLayoutGuide type="bottom" id="yz2-CB-Lly"/>
