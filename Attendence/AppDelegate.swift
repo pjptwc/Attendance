@@ -16,20 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-    
-        let student1 = Student()
-        student1.name = "Jon"
-        createFilesIfNeeded()
-        
-        let date1 = Date()
-        date1.date = NSDate()
-        
-        DataProvider.sharedInstance.storeDate(date1)
-        DataProvider.sharedInstance.storeStudent(student1)
-        
-        print(DataProvider.sharedInstance.getStoredDates())
-        print(DataProvider.sharedInstance.getStoredStudents())
-        
         return true
     }
 
