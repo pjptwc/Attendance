@@ -25,11 +25,14 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JUi-I3-kTY" id="T6q-1p-fo1">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FHa-jC-wyG"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.34509803919999998" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,8 +44,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Attendance" id="7eE-ny-u68">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VMc-eD-3zI"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VMc-eD-3zI">
+                            <connections>
+                                <action selector="addNewDate:" destination="BYZ-38-t0r" id="Ngo-la-NeZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="vgm-gw-qe4" id="hxd-cG-tPz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,7 +95,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tRj-RP-aRK" id="sqm-Ne-ccU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
