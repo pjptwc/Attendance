@@ -47,7 +47,8 @@ extension AttendanceViewController: UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
         }
-        cell!.textLabel?.text = "\(self.datesArray![indexPath.row].date!)"
+        let date = self.datesArray![indexPath.row].date!
+        cell!.textLabel?.text = "\(DateFormatter.sharedInstance.dateFormatter.stringFromDate(date))"
         cell!.selectionStyle = .None
         return cell!
     }
@@ -57,6 +58,18 @@ extension AttendanceViewController: UITableViewDataSource {
 extension AttendanceViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        let recordVC = self.storyboard?.instantiateViewControllerWithIdentifier("RecordViewController") as! RecordViewController
+        recordVC.date = self.datesArray![indexPath.row]
+        self.navigationController?.pushViewController(recordVC, animated: true)
+    }
+}
+
+
+class DateFormatter {
+    static let sharedInstance = DateFormatter()
+    var dateFormatter: NSDateFormatter {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        return formatter
     }
 }

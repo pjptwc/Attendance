@@ -10,25 +10,25 @@ import Foundation
 
 class Student: NSObject, NSCoding {
     var name: String?
-    var attendenceRecord: [Int: Bool]?
+    var attendenceRecord: [Double: Bool] = [0 : false]
     
     override init() {
         super.init()
     }
+    
     func encodeWithCoder(aCoder: NSCoder) {
         if let name = self.name {
             aCoder.encodeObject(name, forKey: "name")
         }
-        if let attendenceRecord = self.attendenceRecord {
-            aCoder.encodeObject(attendenceRecord, forKey: "attendenceRecord")
-        }
+        aCoder.encodeObject(attendenceRecord, forKey: "attendenceRecord")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         if let name = aDecoder.decodeObjectForKey("name") as? String {
             self.name = name
         }
-        if let attendenceRecord = aDecoder.decodeObjectForKey("attendenceRecord") as? [Int : Bool] {
+        if let attendenceRecord = aDecoder.decodeObjectForKey("attendenceRecord") as? [Double : Bool] {
             self.attendenceRecord = attendenceRecord
         }
         super.init()

@@ -60,7 +60,6 @@ class StudentsViewController: UIViewController {
     }
 }
 
-
 extension StudentsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

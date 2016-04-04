@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Attendance-->
@@ -32,6 +33,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="FHa-jC-wyG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="beN-aP-l0h"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -128,6 +130,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mei-HK-coO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2189" y="1157"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="Vp7-qT-Toi">
+            <objects>
+                <viewController storyboardIdentifier="RecordViewController" automaticallyAdjustsScrollViewInsets="NO" id="IaW-bg-crI" customClass="RecordViewController" customModule="Attendence" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wsT-Bx-Oth"/>
+                        <viewControllerLayoutGuide type="bottom" id="vDv-kf-KB0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rCV-hX-qXV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j1n-Ef-Yuj">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCellIdentifier" id="L9G-ky-ywa" customClass="RecordTableViewCell" customModule="Attendence" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L9G-ky-ywa" id="7fu-C9-SF5">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8K-gz-6Y4">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="recordSwitchChanged:" destination="L9G-ky-ywa" eventType="valueChanged" id="MyN-HU-96j"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOQ-jO-NWk">
+                                                    <rect key="frame" x="8" y="11" width="527" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C8K-gz-6Y4" firstAttribute="centerY" secondItem="7fu-C9-SF5" secondAttribute="centerY" id="BYY-cB-AcX"/>
+                                                <constraint firstItem="rOQ-jO-NWk" firstAttribute="centerY" secondItem="7fu-C9-SF5" secondAttribute="centerY" id="GnP-3P-6I5"/>
+                                                <constraint firstItem="rOQ-jO-NWk" firstAttribute="leading" secondItem="7fu-C9-SF5" secondAttribute="leadingMargin" id="hqC-Fd-kqa"/>
+                                                <constraint firstItem="C8K-gz-6Y4" firstAttribute="leading" secondItem="rOQ-jO-NWk" secondAttribute="trailing" constant="8" id="v7h-jB-nIZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="C8K-gz-6Y4" secondAttribute="trailing" constant="8" id="yUC-Rr-B76"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="attendanceSwitch" destination="C8K-gz-6Y4" id="K4W-zM-n6u"/>
+                                            <outlet property="studentNameLabel" destination="rOQ-jO-NWk" id="wxR-zQ-Amd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IaW-bg-crI" id="T9U-WQ-LQv"/>
+                                    <outlet property="delegate" destination="IaW-bg-crI" id="NaW-b1-jo3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vDv-kf-KB0" firstAttribute="top" secondItem="j1n-Ef-Yuj" secondAttribute="bottom" id="1VJ-7b-CII"/>
+                            <constraint firstItem="j1n-Ef-Yuj" firstAttribute="leading" secondItem="rCV-hX-qXV" secondAttribute="leading" id="F7x-nT-ypE"/>
+                            <constraint firstItem="j1n-Ef-Yuj" firstAttribute="top" secondItem="wsT-Bx-Oth" secondAttribute="bottom" id="K4k-Jb-gRO"/>
+                            <constraint firstAttribute="trailing" secondItem="j1n-Ef-Yuj" secondAttribute="trailing" id="OzT-Od-t3U"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nr1-it-KyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2874" y="479"/>
         </scene>
         <!--Attendance-->
         <scene sceneID="tmF-ST-dVR">

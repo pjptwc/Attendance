@@ -67,4 +67,8 @@ class DataProvider {
         }
         NSKeyedArchiver.archiveRootObject(storedStudents!, toFile: self.studentsFilePath)
     }
+    
+    func saveRecords(students: [Student]) {
+        NSKeyedArchiver.archiveRootObject(students, toFile: self.studentsFilePath)
+    }
 }

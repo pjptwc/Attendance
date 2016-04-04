@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31478F5E1CAA0A030037D4FC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31478F5D1CAA0A030037D4FC /* DataProvider.swift */; };
+		317FCDB41CAEF89200407A35 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317FCDB31CAEF89200407A35 /* RecordTableViewCell.swift */; };
+		31C5CB361CAB060F00CB845B /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5CB351CAB060F00CB845B /* RecordViewController.swift */; };
 		31F268F21CA9E924003B8993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F268F11CA9E924003B8993 /* AppDelegate.swift */; };
 		31F268F41CA9E924003B8993 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F268F31CA9E924003B8993 /* AttendanceViewController.swift */; };
 		31F268F71CA9E924003B8993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F268F51CA9E924003B8993 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		31478F5D1CAA0A030037D4FC /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		317FCDB31CAEF89200407A35 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		31C5CB351CAB060F00CB845B /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		31F268EE1CA9E924003B8993 /* Attendence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F268F11CA9E924003B8993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31F268F31CA9E924003B8993 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		317FCDB21CAEF86F00407A35 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				317FCDB31CAEF89200407A35 /* RecordTableViewCell.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		31F268E51CA9E924003B8993 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +117,12 @@
 		31F268F01CA9E924003B8993 /* Attendence */ = {
 			isa = PBXGroup;
 			children = (
+				317FCDB21CAEF86F00407A35 /* Custom Views */,
 				31F269211CA9EE22003B8993 /* Models */,
 				31F268F11CA9E924003B8993 /* AppDelegate.swift */,
 				31F268F31CA9E924003B8993 /* AttendanceViewController.swift */,
 				31F2691F1CA9EDB7003B8993 /* StudentsViewController.swift */,
+				31C5CB351CAB060F00CB845B /* RecordViewController.swift */,
 				31F268F51CA9E924003B8993 /* Main.storyboard */,
 				31F268F81CA9E924003B8993 /* Assets.xcassets */,
 				31F268FA1CA9E924003B8993 /* LaunchScreen.storyboard */,
@@ -279,8 +293,10 @@
 				31478F5E1CAA0A030037D4FC /* DataProvider.swift in Sources */,
 				31F268F41CA9E924003B8993 /* AttendanceViewController.swift in Sources */,
 				31F269271CA9EFA4003B8993 /* Date.swift in Sources */,
+				31C5CB361CAB060F00CB845B /* RecordViewController.swift in Sources */,
 				31F268F21CA9E924003B8993 /* AppDelegate.swift in Sources */,
 				31F269201CA9EDB7003B8993 /* StudentsViewController.swift in Sources */,
+				317FCDB41CAEF89200407A35 /* RecordTableViewCell.swift in Sources */,
 				31F269231CA9EE3C003B8993 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
